@@ -65,22 +65,27 @@ Defining custom types in TS
 - use Pascal naming convention, combined with lower-case for our parameter
 
   ```typescript
+  interface Point {
+    x: number;
+    y: number;
+  }
+
   let drawPoint = (point: Point) => {};
   ```
 
 ### Classes & Objects
 
-- Cohesion: things that are related should be part of one unit (go together
+- Cohesion: things that are related should be part of one unit (go together)
 - a class groups properties and methods that are highly related
 
-* \*interfaces are purely for declarations, they cannot include any implementation
+* \*interfaces are purely for declarations, they cannot include any implementation - so we use a Class
 
-- when defining an object of a custom type, we need to allocate memory to it
+- when defining an object of a custom type, we need to allocate memory to it, so we use `new` to create an instance
 
 ```ts
 let point: Point = new Point();
 // or simply
-let point2 = new Point(); // ts compiler can infer that type of this object is 'Point'
+let point2 = new Point(); // TS compiler can infer that type of this object is 'Point'
 ```
 
 ### Constructors
@@ -89,3 +94,11 @@ let point2 = new Point(); // ts compiler can infer that type of this object is '
 - we can give it paramters and assign types to each
 - we can initialize an object without passing any arguments if we make the parameters optional
 - to make a parameter optional use `?` as a suffix to the parameter, then all parameters on right side should also be optional
+
+```ts
+  constructor(x?: number, y?: number) {
+    // initialize each field
+    this.x = x;
+    this.y = y;
+  }
+```

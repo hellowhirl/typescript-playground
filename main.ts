@@ -34,7 +34,6 @@ class PointClass {
   y: number;
 
   constructor(x?: number, y?: number) {
-    // initialize each field
     this.x = x;
     this.y = y;
   }
