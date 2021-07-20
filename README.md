@@ -68,7 +68,7 @@ Defining custom types in TS
   let drawPoint = (point: Point) => {};
   ```
 
-### Classes
+### Classes & Objects
 
 - Cohesion: things that are related should be part of one unit (go together
 - a class groups properties and methods that are highly related
@@ -82,3 +82,10 @@ let point: Point = new Point();
 // or simply
 let point2 = new Point(); // ts compiler can infer that type of this object is 'Point'
 ```
+
+### Constructors
+
+- a method that is called when we create an instance of that class
+- we can give it paramters and assign types to each
+- we can initialize an object without passing any arguments if we make the parameters optional
+- to make a parameter optional use `?` as a suffix to the parameter, then all parameters on right side should also be optional
