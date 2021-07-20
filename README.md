@@ -67,3 +67,18 @@ Defining custom types in TS
   ```typescript
   let drawPoint = (point: Point) => {};
   ```
+
+### Classes
+
+- Cohesion: things that are related should be part of one unit (go together
+- a class groups properties and methods that are highly related
+
+* \*interfaces are purely for declarations, they cannot include any implementation
+
+- when defining an object of a custom type, we need to allocate memory to it
+
+```ts
+let point: Point = new Point();
+// or simply
+let point2 = new Point(); // ts compiler can infer that type of this object is 'Point'
+```

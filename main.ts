@@ -24,3 +24,22 @@ drawPoint({
   x: 1,
   y: 2,
 });
+
+//////
+// Classes
+//
+
+class PointClass {
+  x: number;
+  y: number;
+
+  draw() {
+    console.log(this.x + ", " + this.y);
+  }
+}
+
+let point = new PointClass(); // an instance of the class Point
+
+point.x = 1;
+point.y = 2;
+point.draw();
