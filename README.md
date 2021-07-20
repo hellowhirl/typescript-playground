@@ -27,7 +27,7 @@ $ node main.js
 - TS files will report errors in our code wiht a squiggly (scope error, etc.), but TS compiler will still generate valid JavaScript code
 - opt to use the `let` keyword whenevver we declare a variable in TS
 
-## Types
+### Types
 
 - `number, string, boolean, any, number[], any[]`
 - `enum` - put all related constants in a container (compiled JS code is quite complicated)
@@ -43,3 +43,27 @@ let result = (<string>message).endsWith("c"); // common method
 
 let alternative = (message as string).endsWith("c"); // alternative method
 ```
+
+### Arrow Functions
+
+A cleaner way to define functions:
+
+```typescript
+let regular = function (message) {
+  console.log(message);
+};
+
+let arrowFunction = (message) => console.log(message); // called "lambda expressions" in C#
+```
+
+### Interfaces
+
+Defining custom types in TS
+
+- with interface we can define the shape of an object
+- we can also reuse in multiple places
+- use Pascal naming convention, combined with lower-case for our parameter
+
+  ```typescript
+  let drawPoint = (point: Point) => {};
+  ```
