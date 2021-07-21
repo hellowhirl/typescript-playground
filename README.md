@@ -83,6 +83,20 @@ Defining custom types in TS
 - when defining an object of a custom type, we need to allocate memory to it, so we use `new` to create an instance
 
 ```ts
+class PointClass {
+  x: number;
+  y: number;
+
+  constructor(x?: number, y?: number) {
+    this.x = x;
+    this.y = y;
+  }
+
+  draw() {
+    console.log(this.x + ", " + this.y);
+  }
+}
+
 let point: Point = new Point();
 // or simply
 let point2 = new Point(); // TS compiler can infer that type of this object is 'Point'
@@ -101,4 +115,42 @@ let point2 = new Point(); // TS compiler can infer that type of this object is '
     this.x = x;
     this.y = y;
   }
+```
+
+### Access Modifiers
+
+```
+public
+private
+protected
+```
+
+- we use when we initialize an object and we don't want the properties to be changeable
+- this makes our code more predictable and reduces the chances for bugs
+
+```ts
+// let's avoid this
+let point = new PointClass(1, 2);
+point.x = 3;
+```
+
+```ts
+// by doing this
+class PointClass {
+  private x: number;
+  y: number;
+  // ...
+}
+```
+
+- all members are `public` by default so using `public` can be redundant, unless we use in our constructor parameters then we should specify `public`
+- we can also reduce redundancy in our code like below
+  - TS will automatically generate 'x' and 'y' fields
+  - TS will ALSO auto generate assignments 'this.x = x' and 'this.y = y'
+
+```ts
+class PointClass {
+  constructor(private x?: number, private y?: number) {}
+  //..
+}
 ```
