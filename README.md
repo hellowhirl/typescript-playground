@@ -154,3 +154,31 @@ class PointClass {
   //..
 }
 ```
+
+### Properties
+
+- when we want to get or set the value of a field from the outside we can use properties (which are methods)
+
+```ts
+  get x() {
+    //
+  }
+  set x(value) {
+    //
+  }
+```
+
+- we can then use these properties like fields
+
+```ts
+let readX = optimalPoint.x;
+
+optimalPoint.x = 10; // set x
+```
+
+- a property looks like a field from the outside but internally it's really a method in the class
+- common convention is to rename our construcctor parameters with an underline like `_x` and `_y`
+
+```ts
+constructor(private _x?: number, private _y?: number) {}
+```
