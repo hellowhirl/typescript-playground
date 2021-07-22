@@ -182,3 +182,25 @@ optimalPoint.x = 10; // set x
 ```ts
 constructor(private _x?: number, private _y?: number) {}
 ```
+
+### Modules
+
+- separate types into individual files for better code organization. Types can be:
+  - classes
+  - functions
+  - simple variables
+  - objects
+- add `export` keyword to make class visible outside the file (then it will become a module)
+
+```ts
+export class PointOptimal {
+  //
+}
+```
+
+- in curly braces we add the names of the types we want to import
+- `from` name of the module which is relative path to module from current file
+
+```ts
+import { PointOptimal, a, b, c, etc } from "./point";
+```
