@@ -20,7 +20,11 @@ $ sudo npm install -g typescript
 
 ```
 $ tsc main.ts
+```
 
+3. Execute in node to see that code in .js file outputs what we expect
+
+```
 $ node main.js
 ```
 
